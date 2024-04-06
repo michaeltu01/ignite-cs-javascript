@@ -1,0 +1,72 @@
+<!-- 
+  Mad Libs (Instructor Copy)
+  IgniteCS Classical High School Afterschool Coding Club
+
+  Borrowed from: Khan Academy (2024)
+  Modified by: Michael Tu, 2024-02-29
+   -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Challenge: Mad Libs</title>
+  </head>
+  <body>
+    <h1>Mad Libs</h1>
+
+    <ul>
+      <li>Noun: <input type="text" id="noun" /></li>
+      <li>Adjective: <input type="text" id="adjective" /></li>
+      <li>Someone's Name: <input type="text" id="person" /></li>
+      <!-- HINT: You need to add one more input HERE! -->
+      <li>Another noun: <input type="text" id="another_noun" /></li>
+    </ul>
+
+    <button id="lib-button">Lib it!</button>
+
+    <p>
+      Generated story:
+      <span id="story"></span>
+    </p>
+
+    <script>
+      var libButton = document.getElementById("lib-button");
+
+      /*
+        This function takes in 4 inputs: one for each word YOU typed in for your Mad Libs. Then, it inserts them into your Mad Lib!
+      */
+      function concat(person, adjective, noun, another_noun) {
+        return `${person} went to the store. ${person} bought a ${adjective} ${noun}. As ${person} was taking it to the counter, ${person} dropped the ${adjective} ${noun} and it made a ${another_noun} sound.`;
+      }
+
+      var libIt = function () {
+        // This element is where you can store your final Mad Lib story!
+        var storyDiv = document.getElementById("story");
+
+        // TODO: You only have 3 inputs, but your concat() function takes in 4! You need to create one more input box in your HTML code, and call it HERE!
+        var noun = document.getElementById("noun").value;
+        var adjective = document.getElementById("adjective").value;
+        var name = document.getElementById("person").value;
+        var another_noun = document.getElementById("another_noun").value; // ANSWER
+
+        // TODO: Pass the correct variables into concat() function!
+        storyDiv.innerHTML = concat(name, adjective, noun, another_noun);
+      };
+
+      // Challenge: Create your OWN Mad Lib template! Follow the format of the code above. Feel free to ask any of us for help!
+      // Make sure to add this function to the libButton's event listener
+      var challenge = function () {
+        /*
+        Some additional Mad Lib templates (with the help of ChatGPT):
+          `In a top-secret laboratory, ${person} invented a machine that could turn ${noun} into ${adjective} ${noun}. Chaos ensued when the machine malfunctioned, transforming everything into ${another_noun} and causing hilarious mishaps.`
+          `In a galaxy filled with ${adjective} aliens, ${person} was known as the bravest ${noun} pilot. Their trusty sidekick, a ${adjective} ${noun}, accompanied them on daring space adventures. Together, they battled evil ${another_noun} and saved the universe.`
+          `Deep within the ancient ruins, ${person} discovered a hidden chamber filled with ${adjective} ${noun}. Among them, they found a peculiar ${another_noun} that seemed to pulsate with energy.`
+          `Legend has it that ${person} once possessed a magical ${noun} capable of granting wishes. However, its ${adjective} powers attracted the attention of a mischievous ${another_noun} seeking chaos.`  
+        */
+        return;
+      };
+      libButton.addEventListener("click", libIt);
+    </script>
+  </body>
+</html>

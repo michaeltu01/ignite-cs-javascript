@@ -1,0 +1,67 @@
+<!-- 
+  Mad Libs (Student Stencil)
+  IgniteCS Classical High School Afterschool Coding Club
+
+  Borrowed from: Khan Academy (2024)
+  Modified by: Michael Tu, 2024-02-29
+   -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+</head>
+
+<body>
+  <h1>Mad Libs</h1>
+
+  <ul>
+    <li>Noun: <input type="text" id="noun" /></li>
+    <li>Adjective: <input type="text" id="adjective" /></li>
+    <li>Someone's Name: <input type="text" id="person" /></li>
+    <!-- HINT: You need to add one more input HERE! -->
+    <li>Another noun: </li>
+  </ul>
+
+  <button id="lib-button">Lib it!</button>
+
+  <p>
+    Generated story:
+    <span id="story"></span>
+  </p>
+
+  <script>
+    var libButton = document.getElementById("lib-button");
+
+    /*
+      This function takes in 4 inputs: one for each word YOU typed in for your Mad Libs. Then, it inserts them into your Mad Lib!
+    */
+    function concat(name, adjective, noun, another_noun) {
+      return `${name} went to the store. ${name} bought a ${adjective} ${noun}. As ${name} was taking it to the counter, ${name} dropped the ${adjective} ${noun} and it made a ${another_noun} sound.`;
+    }
+
+    var libIt = function () {
+      // This element is where you can store your final Mad Lib story!
+      var storyDiv = document.getElementById("story");
+
+      // TODO: You only have 3 inputs, but your concat() function takes in 4! You need to create one more input box in your HTML code, and call it HERE!
+      var noun = document.getElementById("noun").value;
+      var adjective = document.getElementById("adjective").value;
+      var person = document.getElementById("person").value;
+
+      // TODO: Pass the correct variables into concat() function!
+      storyDiv.innerHTML = concat(_, _, _, _);
+    };
+
+    // Challenge: Create your OWN Mad Lib template! Follow the format of the code above. Feel free to ask any of us for help!
+    // Make sure to add this function to the libButton's event listener
+    var challenge = function () {
+      return;
+    };
+    libButton.addEventListener("click", libIt);
+  </script>
+</body>
+
+</html>
